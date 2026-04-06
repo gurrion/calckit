@@ -4,7 +4,6 @@
 .pub-cache/
 .pub/
 build/
-.fvm/flutter_sdk
 
 # Android
 **/android/.gradle/
@@ -39,3 +38,6 @@ build/
 # Misc
 *.lock
 !pubspec.lock
+
+# FVM Version Cache
+.fvm/

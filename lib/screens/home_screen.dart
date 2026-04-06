@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../services/ad_service.dart';
 import '../services/premium_service.dart';
 import '../widgets/ad_banner.dart';
 import 'basic_calculator_screen.dart';

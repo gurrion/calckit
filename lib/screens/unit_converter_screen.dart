@@ -61,9 +61,13 @@ class _UnitConverterScreenState extends State<UnitConverterScreen> {
   double _convertTemp(double value) {
     // Convert to Celsius first
     double celsius;
-    if (_fromUnit == 'Celsius') celsius = value;
-    else if (_fromUnit == 'Fahrenheit') celsius = (value - 32) * 5 / 9;
-    else celsius = value - 273.15; // Kelvin
+    if (_fromUnit == 'Celsius') {
+      celsius = value;
+    } else if (_fromUnit == 'Fahrenheit') {
+      celsius = (value - 32) * 5 / 9;
+    } else {
+      celsius = value - 273.15;
+    }
 
     // Convert from Celsius to target
     if (_toUnit == 'Celsius') return celsius;

@@ -15,7 +15,7 @@ class _TipCalculatorScreenState extends State<TipCalculatorScreen> {
   int _splitPeople = 1;
   double get _tipAmount => (double.tryParse(_billController.text) ?? 0) * _tipPercent / 100;
   double get _total => (double.tryParse(_billController.text) ?? 0) + _tipAmount;
-  double get _perPerson => _splitPeople > 0 ? _total / _splitPeople : _total;
+  double get _perPerson => _splitPeople > 0 ? _total / _splitPeople.toDouble() : _total;
 
   void _notify() => AdService().onCalculationPerformed();
 
@@ -42,7 +42,7 @@ class _TipCalculatorScreenState extends State<TipCalculatorScreen> {
               max: 50,
               divisions: 50,
               label: '$_tipPercent%',
-              onChanged: (v) => setState(() => _tipPercent = v.round()),
+              onChanged: (v) => setState(() => _tipPercent = v.roundToDouble()),
               onChangeEnd: (_) => _notify(),
             ),
             Wrap(
@@ -52,7 +52,7 @@ class _TipCalculatorScreenState extends State<TipCalculatorScreen> {
                 return ChoiceChip(
                   label: Text('$p%'),
                   selected: selected,
-                  onSelected: (_) => setState(() { _tipPercent = p; _notify(); }),
+                  onSelected: (_) => setState(() { _tipPercent = p.toDouble(); _notify(); }),
                 );
               }).toList(),
             ),

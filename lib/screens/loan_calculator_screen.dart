@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import '../services/ad_service.dart';
 import '../widgets/ad_banner.dart';
@@ -42,9 +43,6 @@ class _LoanCalculatorScreenState extends State<LoanCalculatorScreen> {
     AdService().onCalculationPerformed();
   }
 
-  num pow(num x, num y) => _pow(x, y);
-  double _pow(double x, double y) => (x).pow(y) as double;
-
   @override
   void initState() {
     super.initState();
@@ -53,7 +51,6 @@ class _LoanCalculatorScreenState extends State<LoanCalculatorScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(title: const Text('Calculadora de préstamos')),
       body: SingleChildScrollView(
@@ -73,23 +70,11 @@ class _LoanCalculatorScreenState extends State<LoanCalculatorScreen> {
             ),
             if (_monthlyPayment != null) ...[
               const SizedBox(height: 32),
-              _ResultCard(
-                label: 'Cuota mensual',
-                value: '\$${_formatNumber(_monthlyPayment!)}',
-                color: Colors.blue,
-              ),
+              _ResultCard(label: 'Cuota mensual', value: '\$${_formatNumber(_monthlyPayment!)}', color: Colors.blue),
               const SizedBox(height: 12),
-              _ResultCard(
-                label: 'Total a pagar',
-                value: '\$${_formatNumber(_totalPayment!)}',
-                color: Colors.orange,
-              ),
+              _ResultCard(label: 'Total a pagar', value: '\$${_formatNumber(_totalPayment!)}', color: Colors.orange),
               const SizedBox(height: 12),
-              _ResultCard(
-                label: 'Intereses totales',
-                value: '\$${_formatNumber(_totalInterest!)}',
-                color: Colors.red,
-              ),
+              _ResultCard(label: 'Intereses totales', value: '\$${_formatNumber(_totalInterest!)}', color: Colors.red),
             ],
             const SizedBox(height: 24),
             const AdBanner(),
