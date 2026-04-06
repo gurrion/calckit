@@ -1,0 +1,41 @@
+*.iml
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+.fvm/flutter_sdk
+
+# Android
+**/android/.gradle/
+**/android/app/debug/
+**/android/app/profile/
+**/android/app/release/
+**/android/build/
+**/android/local.properties
+**/android/**/*.keystore
+**/android/**/GeneratedPluginRegistrant.java
+
+# iOS
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/
+**/ios/Flutter/AppFrameworkInfo.plist
+**/ios/Flutter/Debug.xcconfig
+**/ios/Flutter/Release.xcconfig
+**/ios/Flutter/engine/
+**/ios/ServiceDefinitions.json
+**/ios/Runner/GeneratedPluginRegistrant.m
+
+# macOS
+**/macos/Pods/
+**/macos/.symlinks/
+**/macos/Flutter/
+
+# VS Code
+.vscode/
+.idea/
+
+# Misc
+*.lock
+!pubspec.lock
