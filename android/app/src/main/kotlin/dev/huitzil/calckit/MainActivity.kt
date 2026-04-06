@@ -1,4 +1,4 @@
-package com.example.calckit
+package dev.huitzil.calckit
 
 import io.flutter.embedding.android.FlutterActivity
 
